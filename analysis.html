@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Global Tech Layoffs 2020–2025 — Yoma'z Data</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* Page-specific overrides */
+.page-hero {
+  min-height: 45vh;
+  display: flex; align-items: center;
+  padding: 100px 40px 60px;
+  position: relative; overflow: hidden;
+}
+.page-hero-bg {
+  position: absolute; inset: 0; pointer-events: none;
+}
+.page-hero .hero-orb { opacity: 0.15; }
+.page-hero-inner {
+  max-width: 1280px; margin: 0 auto; width: 100%;
+  position: relative; z-index: 1;
+}
+.back-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--mono); font-size: 11px;
+  color: var(--teal-light); letter-spacing: 0.1em;
+  text-transform: uppercase; margin-bottom: 24px;
+  transition: gap 0.2s;
+}
+.back-btn:hover { gap: 14px; color: var(--teal-light); }
+.back-btn svg { transform: rotate(180deg); }
+.page-title {
+  font-family: var(--display);
+  font-size: clamp(32px, 5vw, 62px);
+  font-weight: 800; line-height: 1;
+  letter-spacing: -0.04em; color: var(--white);
+  margin-bottom: 12px;
+}
+.page-title span { color: var(--teal-light); }
+.page-meta {
+  font-family: var(--mono); font-size: 12px;
+  color: var(--text3); letter-spacing: 0.08em;
+  text-transform: uppercase; margin-bottom: 20px;
+}
+.page-desc {
+  font-size: 16px; color: var(--text2);
+  max-width: 680px; line-height: 1.75;
+  margin-bottom: 32px;
+}
+.page-pills {
+  display: flex; flex-wrap: wrap; gap: 10px;
+}
+.pill {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 6px 14px; border-radius: 100px;
+  font-family: var(--mono); font-size: 11px;
+  color: var(--text2);
+}
+.pill.teal-pill {
+  background: var(--teal-soft);
+  border-color: rgba(13,115,119,0.3);
+  color: var(--teal-light);
+}
+
+/* BQ section labels */
+.bq-block { margin-bottom: 40px; }
+.bq-header {
+  display: flex; align-items: flex-start; gap: 14px;
+  margin-bottom: 14px;
+}
+.bq-num {
+  flex-shrink: 0;
+  font-family: var(--mono); font-size: 11px; font-weight: 500;
+  color: var(--teal-light);
+  background: var(--teal-soft);
+  border: 1px solid rgba(13,115,119,0.25);
+  padding: 5px 10px; border-radius: 6px;
+  letter-spacing: 0.08em; white-space: nowrap;
+  margin-top: 2px;
+}
+.bq-question {
+  font-family: var(--display);
+  font-size: 17px; font-weight: 700;
+  color: var(--white); line-height: 1.3;
+}
+.bq-finding {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: rgba(232,83,58,0.08);
+  border: 1px solid rgba(232,83,58,0.2);
+  border-radius: 6px;
+  padding: 8px 14px; margin-bottom: 14px;
+  font-size: 13px; color: #e87a5a;
+  font-family: var(--mono);
+}
+.bq-finding.green {
+  background: rgba(74,222,128,0.08);
+  border-color: rgba(74,222,128,0.2);
+  color: #4ade80;
+}
+.divider-line {
+  height: 1px;
+  background: linear-gradient(90deg, var(--teal), transparent);
+  margin: 48px 0;
+  opacity: 0.3;
+}
+
+/* Insight box */
+.insight-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--teal);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 16px 20px; margin-top: 12px;
+}
+.insight-box p {
+  font-size: 13px; color: var(--text2);
+  line-height: 1.7; margin: 0;
+}
+.insight-box strong { color: var(--teal-light); }
+
+/* Nav active override for this page */
+.nav-analysis { background: rgba(255,255,255,0.15) !important; color:#fff !important; }
+
+/* Stats row */
+.stat-row {
+  display: flex; flex-wrap: wrap; gap: 10px;
+  margin-bottom: 32px;
+}
+.stat-mini {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 18px;
+}
+.stat-mini-val {
+  font-family: var(--mono);
+  font-size: 20px; font-weight: 500;
+  color: var(--teal-light); line-height: 1;
+}
+.stat-mini-lbl {
+  font-size: 10px; color: var(--text3);
+  text-transform: uppercase; letter-spacing: 0.06em;
+  margin-top: 4px;
+}
+
+@media(max-width:768px) {
+  .page-hero { padding: 90px 24px 40px; }
+  .back-btn { font-size: 10px; }
+}
+</style>
+</head>
+<body>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="cursorFollower"></div>
+
+<!-- LOADER -->
+<div class="loader" id="loader">
+  <div class="loader-inner">
+    <div class="loader-logo">YD</div>
+    <div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div>
+    <div class="loader-text" id="loaderText">Loading analysis...</div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-brand"><span class="brand-yz">Yoma'z</span><span class="brand-data"> Data</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="index.html#overview" class="nav-link">Overview</a></li>
+      <li><a href="analysis.html" class="nav-link nav-analysis">2020–25 Analysis</a></li>
+      <li><a href="index.html#findings" class="nav-link">2020–23 Study</a></li>
+      <li><a href="index.html#about" class="nav-link">About</a></li>
+      <li><a href="index.html#contact" class="nav-link nav-cta">Contact</a></li>
+      <li><a href="https://www.linkedin.com/in/harrison-onigba-45a7a11a0" target="_blank" rel="noopener" class="nav-link nav-linkedin" title="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="index.html" class="mob-link">← Back to Portfolio</a></li>
+    <li><a href="#bq1" class="mob-link">BQ1 — Yearly Trend</a></li>
+    <li><a href="#bq3" class="mob-link">BQ3 — Industry Risk</a></li>
+    <li><a href="#bq7" class="mob-link">BQ7 — Company Risk</a></li>
+    <li><a href="#bq12" class="mob-link">BQ12 — Economic Cost</a></li>
+    <li><a href="index.html#contact" class="mob-link">Contact</a></li>
+  </ul>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg">
+    <div class="hero-orb orb1"></div>
+    <div class="hero-orb orb2"></div>
+    <div class="grid-lines"></div>
+  </div>
+  <div class="page-hero-inner">
+    <a href="index.html" class="back-btn"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Back to Portfolio</a>
+    <div class="page-meta">New Dataset · Kaggle · 2,412 Records · ETL Processed</div>
+    <h1 class="page-title">Global Tech Layoffs<br><span>2020–2025</span></h1>
+    <p class="page-desc">A professional-grade exploratory data analysis answering <strong>12 critical business questions</strong> for finance leaders, investors and industry strategists navigating today's AI-disrupted economic landscape.</p>
+    <div class="stat-row">
+      <div class="stat-mini"><div class="stat-mini-val">746K+</div><div class="stat-mini-lbl">Layoffs Tracked</div></div>
+      <div class="stat-mini"><div class="stat-mini-val">1,713</div><div class="stat-mini-lbl">Companies</div></div>
+      <div class="stat-mini"><div class="stat-mini-val">49</div><div class="stat-mini-lbl">Countries</div></div>
+      <div class="stat-mini"><div class="stat-mini-val">$59.7B</div><div class="stat-mini-lbl">Est. Cost</div></div>
+      <div class="stat-mini"><div class="stat-mini-val">2025</div><div class="stat-mini-lbl">Worst Year</div></div>
+    </div>
+    <div class="page-pills">
+      <span class="pill teal-pill">Python · Pandas</span>
+      <span class="pill teal-pill">ETL Pipeline</span>
+      <span class="pill teal-pill">Feature Engineering</span>
+      <span class="pill">Matplotlib · Seaborn</span>
+      <span class="pill">EDA</span>
+      <span class="pill">Business Intelligence</span>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN ANALYSIS -->
+<section style="padding: 60px 40px; max-width: 1280px; margin: 0 auto;">
+
+  <!-- BQ1 -->
+  <div class="bq-block" id="bq1" data-aos="fade-up">
+    <div class="bq-header">
+      <div class="bq-num">BQ 01</div>
+      <div class="bq-question">Is the layoff crisis getting worse or better year over year?</div>
+    </div>
+    <div class="bq-finding">▲ 2025 is the worst year on record — 200,445 layoffs and still accelerating</div>
+    <div class="row g-3">
+      <div class="col-12">
+        <div class="bento-card">
+          <div class="bento-tag">Annual Trend · 2020–2025</div>
+          <div class="bento-title">Total Layoffs by Year</div>
+          <div class="chart-wrap" style="height:220px"><canvas id="yearChart"></canvas></div>
+        </div>
+      </div>
+    </div>
+    <div class="insight-box">
+      <p>2025 surpassed 2023's Big Tech correction to become the <strong>single worst year on record</strong>. After a brief recovery signal in 2021, the crisis escalated every year from 2022. The data shows this is a structural shift — not a cycle — driven by AI automation replacing roles across all seniority levels.</p>
+    </div>
+  </div>
+
+  <div class="divider-line"></div>
+
+  <!-- BQ2 -->
+  <div class="bq-block" id="bq2" data-aos="fade-up">
+    <div class="bq-header">
+      <div class="bq-num">BQ 02</div>
+      <div class="bq-question">Which months trigger the biggest layoff waves? When should companies and workers prepare?</div>
+    </div>
+    <div class="bq-finding">▲ Three major waves identified — Q1 and Q4 are the highest-risk periods every year</div>
+    <div class="row g-3">
+      <div class="col-12">
+        <div class="bento-card">
+          <div class="bento-tag">Monthly Time Series · Mar 2020 – Dec 2025</div>
+          <div class="bento-title">Full Monthly Layoff Timeline</div>
+          <div class="chart-wrap" style="height:220px"><canvas id="monthlyChart"></canvas></div>
+        </div>
+      </div>
+    </div>
+    <div class="insight-box">
+      <p>Three distinct waves are visible: <strong>Apr 2020</strong> (COVID lockdowns hit physical industries), <strong>Jan 2023</strong> (Big Tech post-overhiring correction — 66K in one month), and <strong>Nov 2025</strong> (AI-driven restructuring — 40K+ monthly). Companies should model workforce risk budgets around <strong>Q1 and Q4 exposure windows</strong>.</p>
+    </div>
+  </div>
+
+  <div class="divider-line"></div>
+
+  <!-- BQ3 + BQ4 side by side -->
+  <div class="bq-block" id="bq3" data-aos="fade-up">
+    <div class="bq-header">
+      <div class="bq-num">BQ 03</div>
+      <div class="bq-question">Which industries face the highest risk in the current 2024–2025 economy?</div>
+    </div>
+    <div class="bq-finding">▲ Hardware, Software Development and E-commerce are the new danger zones</div>
+    <div class="row g-3">
+      <div class="col-md-6">
+        <div class="bento-card h-100">
+          <div class="bento-tag">Industry Risk · 2024–2025</div>
+          <div class="bento-title">Top 10 Most Affected Industries</div>
+          <div class="chart-wrap" style="height:220px"><canvas id="industryChart"></canvas></div>
+        </div>
+      </div>
+      <div class="col-md-6" id="bq4">
+        <div class="bento-card h-100">
+          <div class="bento-tag">BQ 04 · Geographic Concentration</div>
+          <div class="bento-title">Top 10 Countries by Total Layoffs</div>
+          <div class="chart-wrap" style="height:220px"><canvas id="countryChart"></canvas></div>
+        </div>
+      </div>
+    </div>
+    <div class="row g-3 mt-0">
+      <div class="col-md-6">
+        <div class="insight-box">
+          <p>AI automation is eliminating roles in <strong>Hardware and Software Development</strong> — sectors that previously drove job growth. E-commerce's 2025 surge reflects Amazon and Alibaba restructuring their logistics and tech layers simultaneously.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="insight-box">
+          <p>The <strong>USA accounts for 72%</strong> of all tracked layoffs — a geographic concentration that exposes the risk of over-dependence on US tech employment. India (7%) and Germany (4%) follow, largely from outsourcing arm reductions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider-line"></div>
+
+  <!-- BQ5 -->
+  <div class="bq-block" id="bq5" data-aos="fade-up">
+    <div class="bq-header">
+      <div class="bq-num">BQ 05</div>
+      <div class="bq-question">How has industry vulnerability shifted from the COVID era (2020) to the AI era (2025)?</div>
+    </div>
+    <div class="bq-finding">▲ Travel & Transportation (COVID) replaced by E-commerce & Software Dev (AI) — a fundamental structural shift</div>
+    <div class="row g-3">
+      <div class="col-md-6">
+        <div class="bento-card h-100">
+          <div class="bento-tag">COVID Era · 2020</div>
+          <div class="bento-title">Top Industries — 2020</div>
+          <div class="chart-wrap" style="height:200px"><canvas id="ind2020Chart"></canvas></div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="bento-card h-100">
+          <div class="bento-tag">AI Era · 2025</div>
+          <div class="bento-title">Top Industries — 2025</div>
+          <div class="chart-wrap" style="height:200px"><canvas id="ind2025Chart"></canvas></div>
+        </div>
+      </div>
+    </div>
+    <div class="insight-box" style="margin-top:14px">
+      <p>In 2020, physical-world industries (Transportation, Travel, Retail) dominated — lockdown effects. By 2025, the pattern completely inverted: <strong>digital industries are now the most vulnerable</strong>. This transition confirms that AI disruption is not sector-specific — it is economy-wide. Finance leaders should reassess "digital transformation" as a workforce risk, not just an opportunity.</p>
+    </div>
+  </div>
+
+  <div class="divider-line"></div>
+
+  <!-- BQ6 + BQ7 -->
+  <div class="bq-block" id="bq6" data-aos="fade-up">
+    <div class="bq-header">
+      <div class="bq-num">BQ 06</div>
+      <div class="bq-question">Do well-funded companies cut more? What does funding stage tell investors about layoff risk?</div>
+    </div>
+    <div class="bq-finding">▲ Post-IPO = highest volume (375K). Seed = highest severity (48% avg workforce cut)</div>
+    <div class="row g-3">
+      <div class="col-md-6">
+        <div class="bento-card h-100">
+          <div class="bento-tag">Volume Risk · By Funding Stage</div>
+          <div class="bento-title">Total Layoffs by Stage</div>
+          <div id="stageLegend" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px"></div>
+          <div class="chart-wrap" style="height:160px"><canvas id="stageChart"></canvas></div>
+        </div>
+      </div>
+      <div class="col-md-6" id="bq7-severity">
+        <div class="bento-card h-100">
+          <div class="bento-tag">BQ 07 · Severity · Avg % Workforce Cut</div>
+          <div class="bento-title">Average Layoff % by Funding Stage</div>
+          <div class="chart-wrap" style="height:205px"><canvas id="stagePctChart"></canvas></div>
+        </div>
+      </div>
+    </div>
+    <div class="insight-box" style="margin-top:14px">
+      <p>Two distinct risk profiles emerge: <strong>Post-IPO companies cut the most people</strong> in absolute terms — driven by public market shareholder pressure to reduce operating costs immediately after listing. <strong>Seed and Series A companies cut the highest percentage</strong> — these are often complete shutdowns. Investors should model both dimensions separately when assessing portfolio workforce risk.</p>
+    </div>
+  </div>
+
+  <div class="divider-line"></div>
+
+  <!-- BQ8 + BQ9 -->
+  <div class="bq-block" id="bq8" data-aos="fade-up">
+    <div class="bq-header">
+      <div class="bq-num">BQ 08</div>
+      <div class="bq-question">Which companies carry the highest systemic risk to the global workforce?</div>
+    </div>
+    <div class="bq-finding">▲ Amazon + Intel + Microsoft = 148K workers — 20% of ALL tracked global layoffs</div>
+    <div class="row g-3">
+      <div class="col-md-6">
+        <div class="bento-card h-100">
+          <div class="bento-tag">Systemic Risk · Total Volume 2020–2025</div>
+          <div class="bento-title">Top 10 Companies by Total Layoffs</div>
+          <div class="chart-wrap" style="height:220px"><canvas id="companyChart"></canvas></div>
+        </div>
+      </div>
+      <div class="col-md-6" id="bq9">
+        <div class="bento-card h-100">
+          <div class="bento-tag">BQ 09 · Chronic Restructuring · Repeat Rounds</div>
+          <div class="bento-title">Companies with Most Layoff Events</div>
+          <div class="chart-wrap" style="height:220px"><canvas id="repeatChart"></canvas></div>
+        </div>
+      </div>
+    </div>
+    <div class="row g-3 mt-0">
+      <div class="col-md-6">
+        <div class="insight-box">
+          <p><strong>Amazon alone cut 72,244 workers</strong> — more than the entire tech workforce of Sweden. The concentration in 3 companies (Amazon, Intel, Microsoft) represents a systemic dependency risk for cities like Seattle and San Francisco where these employers dominate the local economy.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="insight-box">
+          <p><strong>Google and Amazon each conducted 16 separate layoff rounds</strong> from 2020–2025. This pattern signals chronic structural instability — not one-time corrections. Companies with 8+ rounds should be flagged by institutional investors as high workforce governance risk.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider-line"></div>
+
+  <!-- BQ10 + BQ11 -->
+  <div class="bq-block" id="bq10" data-aos="fade-up">
+    <div class="bq-header">
+      <div class="bq-num">BQ 10</div>
+      <div class="bq-question">Where geographically is the economic pain most concentrated globally?</div>
+    </div>
+    <div class="bq-finding">▲ North America absorbs 74% of global layoffs — extreme geographic concentration</div>
+    <div class="row g-3">
+      <div class="col-md-5">
+        <div class="bento-card h-100">
+          <div class="bento-tag">Continental Breakdown · Global Distribution</div>
+          <div class="bento-title">Layoffs by Continent</div>
+          <div class="chart-wrap" style="height:230px"><canvas id="continentChart"></canvas></div>
+        </div>
+      </div>
+      <div class="col-md-7" id="bq11">
+        <div class="bento-card h-100">
+          <div class="bento-tag">BQ 11 · Year on Year · 2024 vs 2025 by Industry</div>
+          <div class="bento-title">Is 2025 Worse Than 2024?</div>
+          <div class="chart-wrap" style="height:230px"><canvas id="yvyChart"></canvas></div>
+        </div>
+      </div>
+    </div>
+    <div class="insight-box" style="margin-top:14px">
+      <p>North America's dominance (74%) masks a global reality: <strong>Asia (12%) and Europe (11%) are growing their share</strong> as multinationals cut international offices alongside US headquarters. The 2024 vs 2025 comparison reveals E-commerce and Software Development as the industries with the most dramatic year-on-year acceleration — both directly linked to AI automation rollouts.</p>
+    </div>
+  </div>
+
+  <div class="divider-line"></div>
+
+  <!-- BQ12 -->
+  <div class="bq-block" id="bq12" data-aos="fade-up">
+    <div class="bq-header">
+      <div class="bq-num">BQ 12</div>
+      <div class="bq-question">What is the true economic cost of tech layoffs by industry? Where is capital destruction highest?</div>
+    </div>
+    <div class="bq-finding">▲ $59.7 Billion estimated total — Consumer, Retail and Hardware each destroyed $4B+ in human capital</div>
+    <div class="row g-3">
+      <div class="col-12">
+        <div class="bento-card">
+          <div class="bento-tag">Economic Impact · $80K Average Tech Salary per Employee</div>
+          <div class="bento-title">Estimated Capital Cost of Layoffs by Industry (USD Millions)</div>
+          <div class="chart-wrap" style="height:220px"><canvas id="costChart"></canvas></div>
+        </div>
+      </div>
+    </div>
+    <div class="insight-box">
+      <p>At an estimated average compensation of $80,000 per tech employee, the <strong>total human capital destroyed between 2020–2025 is approximately $59.7 billion</strong> — equivalent to the annual GDP of Latvia. Consumer and Retail industries top the list, followed closely by Hardware. This metric should be a core input for any CFO modelling restructuring ROI against the true cost of lost institutional knowledge and rehiring cycles.</p>
+    </div>
+  </div>
+
+  <div class="divider-line"></div>
+
+  <!-- Analyst Conclusions -->
+  <div data-aos="fade-up">
+    <div class="section-eyebrow">Analyst Conclusions</div>
+    <h2 class="section-title" style="margin-bottom:28px">Strategic <span class="teal">Takeaways</span></h2>
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="bento-card h-100" style="border-top:2px solid #e8533a">
+          <div class="bento-tag" style="color:#e87a5a">🔴 Critical Risk</div>
+          <div class="bento-title">2025 Is an Inflection Point</div>
+          <div class="bento-insight" style="font-size:13px;line-height:1.7">The 200K+ layoffs in 2025 signal AI is no longer a future threat — it is actively eliminating roles now. Hardware, E-commerce and Software Development companies should expect continued workforce reductions through 2026.</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="bento-card h-100" style="border-top:2px solid #f0a500">
+          <div class="bento-tag" style="color:#f0a500">🟡 Investor Signal</div>
+          <div class="bento-title">Post-IPO Companies Are Highest Risk</div>
+          <div class="bento-insight" style="font-size:13px;line-height:1.7">375K Post-IPO layoffs confirm public market pressure forces deeper cuts. Institutional investors should price workforce restructuring risk into IPO valuations and monitor companies with 8+ layoff rounds as governance red flags.</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="bento-card h-100" style="border-top:2px solid var(--teal)">
+          <div class="bento-tag">🟢 Recovery Signal</div>
+          <div class="bento-title">Finance & Consumer Show Partial Recovery</div>
+          <div class="bento-insight" style="font-size:13px;line-height:1.7">Finance and Consumer sector layoffs declined from 2023 peaks, suggesting these industries have completed their major restructuring cycles. Healthcare and Real Estate remain relatively stable — potential safe harbour sectors for employment.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA back to portfolio -->
+  <div style="text-align:center;margin-top:60px;padding:48px;background:var(--surface);border-radius:var(--radius-lg);border:1px solid var(--border)" data-aos="fade-up">
+    <div class="section-eyebrow" style="justify-content:center">Explore More</div>
+    <h3 style="font-family:var(--display);font-size:26px;font-weight:800;color:var(--white);letter-spacing:-0.03em;margin-bottom:10px">View the Full Portfolio</h3>
+    <p style="font-size:14px;color:var(--text2);margin-bottom:24px">See the original 2020–2023 deep-dive study, interactive charts, and more analysis on the main portfolio page.</p>
+    <a href="index.html" class="btn-primary" style="display:inline-flex"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Back to Yoma'z Data Portfolio</a>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">Yoma<span>'z</span> Data</div>
+    <div class="footer-name">Harrison Onigba · Data Analyst</div>
+    <div class="footer-socials">
+      <a href="mailto:onigbaeminent@gmail.com" class="footer-social-link">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        onigbaeminent@gmail.com
+      </a>
+      <span class="footer-social-sep">·</span>
+      <a href="https://www.linkedin.com/in/harrison-onigba-45a7a11a0" target="_blank" rel="noopener" class="footer-social-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a>
+    </div>
+    <div class="footer-meta">Dataset: Global Tech Layoffs 2020–2025 · 2,412 records · 49 countries · 746,809 layoffs</div>
+    <div class="footer-copy">© 2025 Harrison Onigba. Built with passion for data.</div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script src="analysis-charts.js"></script>
+</body>
+</html>
