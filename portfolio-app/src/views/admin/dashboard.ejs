@@ -2,5 +2,5 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title><%= title %></title><link rel="stylesheet" href="/css/app.css"></head>
 <body><header class="topbar"><a href="/">Portfolio</a><form method="post" action="/auth/logout"><input type="hidden" name="_csrf" value="<%= csrfToken %>"><button class="secondary">Sign out</button></form></header>
 <main class="container"><p class="eyebrow">CONTROL PANEL</p><h1>Welcome, <%= currentUser.name %></h1><section class="stats"><article><strong><%= stats.projectCount %></strong><span>Projects</span></article><article><strong><%= stats.messageCount %></strong><span>Messages</span></article><article><strong><%= stats.unreadCount %></strong><span>Unread</span></article></section>
-<h2>Recent messages</h2><p><a href="/admin/messages">View all messages</a></p>
+<p><a class="button" href="/admin/projects">Manage portfolio projects</a></p><h2>Recent messages</h2><p><a href="/admin/messages">View all messages</a></p>
 <% if (!recentMessages.length) { %><p>No messages received yet.</p><% } else { %><ul class="message-list"><% recentMessages.forEach(message => { %><li><strong><%= message.name %></strong> — <%= message.subject || "No subject" %><small><%= message.email %> · <%= message.createdAt.toLocaleString() %></small></li><% }) %></ul><% } %></main></body></html>
