@@ -11,7 +11,8 @@
     "prisma:migrate": "prisma migrate dev",
     "prisma:studio": "prisma studio",
     "admin:create": "node src/scripts/create-admin.js",
-    "check": "node --check src/app.js && node --check src/server.js && node --check src/controllers/authController.js && node --check src/controllers/adminController.js && node --check src/controllers/contactController.js && node --check src/controllers/homeController.js && node --check src/controllers/projectAdminController.js && node --check src/middleware/authMiddleware.js && node --check src/models/userModel.js && node --check src/routes/adminRoutes.js && node --check src/routes/authRoutes.js && node --check src/routes/contactRoutes.js && node --check src/routes/homeRoutes.js && node --check src/scripts/create-admin.js"
+    "check": "node --check src/app.js && node --check src/server.js && node --check src/controllers/authController.js && node --check src/controllers/adminController.js && node --check src/controllers/contactController.js && node --check src/controllers/homeController.js && node --check src/controllers/projectAdminController.js && node --check src/middleware/authMiddleware.js && node --check src/models/userModel.js && node --check src/routes/adminRoutes.js && node --check src/routes/authRoutes.js && node --check src/routes/contactRoutes.js && node --check src/routes/homeRoutes.js && node --check src/scripts/create-admin.js && node --check src/scripts/seed-projects.js",
+    "seed:projects": "node src/scripts/seed-projects.js"
   },
   "engines": {
     "node": ">=20"
