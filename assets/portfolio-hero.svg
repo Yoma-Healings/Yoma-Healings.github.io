@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1672 941" role="img" aria-labelledby="title desc">
+<title id="title">Engineering, research and technology</title><desc id="desc">A dark blue technical illustration bringing together power systems, embedded electronics, software and data analytics.</desc>
+<defs>
+ <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#09182d"/><stop offset=".55" stop-color="#142b4a"/><stop offset="1" stop-color="#071322"/></linearGradient>
+ <radialGradient id="glow"><stop stop-color="#2377ed" stop-opacity=".48"/><stop offset="1" stop-color="#2377ed" stop-opacity="0"/></radialGradient>
+ <linearGradient id="cyan" x2="1" y2="1"><stop stop-color="#73e2ff"/><stop offset="1" stop-color="#3275ed"/></linearGradient>
+ <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#9bc5ff" stroke-opacity=".09"/></pattern>
+ <filter id="blur"><feGaussianBlur stdDeviation="34"/></filter>
+ <filter id="shadow"><feGaussianBlur stdDeviation="12"/></filter>
+</defs>
+<rect width="1672" height="941" fill="url(#bg)"/><rect width="1672" height="941" fill="url(#grid)"/>
+<circle cx="980" cy="455" r="440" fill="url(#glow)" filter="url(#blur)"/>
+<g fill="none" stroke="#4f9cff" stroke-opacity=".35" stroke-width="2">
+ <path d="M0 160H280V230H430V300H590M0 690H210V610H350V560H480M1190 0V100H1320V190H1500V270H1672M1120 941V820H1270V730H1450V640H1672"/>
+ <path d="M100 0V90H210V150H300M0 820H150V760H280V700M1410 941V850H1530V780H1672"/>
+</g>
+<g fill="#7bdfff"><circle cx="280" cy="230" r="5"/><circle cx="590" cy="300" r="5"/><circle cx="350" cy="560" r="5"/><circle cx="1320" cy="190" r="5"/><circle cx="1450" cy="640" r="5"/></g>
+<!-- dotted world map -->
+<g fill="#8ab9ee" opacity=".2">
+ <path d="M280 330l40-30 42 10 24 34-20 28-38-8-18 32-35-15-17-28zM400 420l32-18 36 15 14 48-20 55-26 24-24-40 8-44zM570 320l42-28 65 10 42 35-14 34-54 2-28 25-44-22zM720 400l36-18 58 28 28 54-35 52-48-15-25-49zM860 320l55-35 65 15 45 42-22 35-72-8-35 23-42-28zM1030 460l50-20 55 24 35 46-30 36-65-9-30-38z"/>
+ </g>
+<!-- central connected system -->
+<g transform="translate(820 455)">
+ <circle r="218" fill="none" stroke="#5aa7ff" stroke-opacity=".2" stroke-width="2"/>
+ <circle r="174" fill="none" stroke="#83caff" stroke-opacity=".3" stroke-width="2" stroke-dasharray="8 14"/>
+ <circle r="128" fill="#102d50" stroke="#6dbaff" stroke-opacity=".65" stroke-width="3"/>
+ <circle r="105" fill="url(#glow)"/>
+ <path d="M-55 0H55M0-55V55M-39-39L39 39M39-39L-39 39" stroke="#74cfff" stroke-opacity=".5" stroke-width="2"/>
+ <g fill="#d7edff" font-family="Arial,sans-serif" text-anchor="middle"><text y="-10" font-size="21" letter-spacing="5">IDEAS</text><text y="22" font-size="21" letter-spacing="5">INTO</text><text y="56" font-size="28" font-weight="700" fill="#7bdfff" letter-spacing="3">IMPACT</text></g>
+</g>
+<!-- power pylon -->
+<g transform="translate(240 360)" fill="none" stroke="url(#cyan)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity=".9">
+ <path d="M0 0L-100 360M0 0L100 360M-100 360H100M-74 265H74M-56 190H56M-36 115H36M-88 305L88 190M88 305L-88 190M-65 230L65 115M65 230L-65 115M-125 110H125M-160 145H160M-125 110L-160 145M125 110L160 145"/>
+ <path d="M-155 110Q-90 75-30 110T95 110T190 110" stroke="#70d8ff" stroke-width="3" opacity=".7"/>
+</g>
+<!-- chip -->
+<g transform="translate(1260 235)">
+ <rect x="-102" y="-90" width="204" height="180" rx="22" fill="#132e50" stroke="#67b8ff" stroke-width="3"/>
+ <rect x="-65" y="-56" width="130" height="112" rx="12" fill="#0b1b31" stroke="#367fd0" stroke-width="2"/>
+ <path d="M-130 -55H-102M-130 -15H-102M-130 25H-102M-130 65H-102M102 -55H130M102 -15H130M102 25H130M102 65H130M-55 -118V-90M-15 -118V-90M25 -118V-90M65 -118V-90M-55 90V118M-15 90V118M25 90V118M65 90V118" stroke="#77dfff" stroke-width="8" stroke-linecap="round"/>
+ <path d="M-35 0H35M0-35V35M-24-24L24 24M24-24L-24 24" stroke="#76dfff" stroke-width="4"/>
+ <circle r="13" fill="#72e2ff"/>
+</g>
+<!-- data chart -->
+<g transform="translate(1380 540)">
+ <rect x="-155" y="-105" width="300" height="210" rx="18" fill="#122b49" stroke="#4d8dcc" stroke-opacity=".8" stroke-width="2"/>
+ <path d="M-115 65H110M-115 20H110M-115-25H110" stroke="#9bcaff" stroke-opacity=".15" stroke-width="2"/>
+ <g fill="#3c8af2"><rect x="-95" y="5" width="25" height="60" rx="4"/><rect x="-48" y="-25" width="25" height="90" rx="4"/><rect x="-1" y="-2" width="25" height="67" rx="4"/><rect x="46" y="-70" width="25" height="135" rx="4"/></g>
+ <path d="M-100-45L-55-62L-10-48L55-88L105-78" fill="none" stroke="#78e0ff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+ <g fill="#a8c8e9" font-family="Arial,sans-serif" font-size="12"><text x="-112" y="-78" letter-spacing="2">DATA INSIGHTS</text><text x="-110" y="88">ANALYSE / LEARN / IMPROVE</text></g>
+</g>
+<!-- laptop software -->
+<g transform="translate(620 730)">
+ <rect x="-150" y="-100" width="300" height="190" rx="15" fill="#0a1728" stroke="#75baff" stroke-width="4"/>
+ <rect x="-130" y="-80" width="260" height="150" rx="6" fill="#102947"/>
+ <g stroke-width="7" stroke-linecap="round"><path d="M-100-42H15M-100-10H90M-100 22H35" stroke="#64c7ff"/><path d="M-100 52H-20M50 52H95" stroke="#70e4d1"/></g>
+ <path d="M-180 95H180L145 120H-145Z" fill="#3c6e9d" stroke="#84cfff" stroke-width="3"/>
+ <g fill="#b9dcff" font-family="monospace" font-size="13"><text x="-112" y="-112">BACKEND / CODE</text></g>
+</g>
+<!-- light bulb and leaf -->
+<g transform="translate(1040 720)">
+ <path d="M0-88C-54-88-80-42-65 2C-55 29-32 39-30 67H30C32 39 55 29 65 2C80-42 54-88 0-88Z" fill="#1d4267" stroke="#83dfff" stroke-width="4"/>
+ <path d="M-30 68H30M-25 84H25M-17 98H17" stroke="#83dfff" stroke-width="6" stroke-linecap="round"/>
+ <path d="M0-56V22M0-20Q-30-45-38-25Q-25 0 0 2M0-2Q30-30 39-12Q28 14 0 18" fill="none" stroke="#a4f1ff" stroke-width="4"/>
+ <path d="M-105-130L-120-150M105-130L120-150M0-160V-184M-130-55L-155-60M130-55L155-60" stroke="#77dfff" stroke-width="5" stroke-linecap="round"/>
+</g>
+<!-- fine technical labels -->
+<g fill="#9bb8d8" font-family="monospace" font-size="15" letter-spacing="3" opacity=".8"><text x="95" y="820">POWER SYSTEMS</text><text x="1120" y="105">EMBEDDED / IoT</text><text x="1190" y="835">RESEARCH · ANALYTICS</text></g>
+<path d="M0 900H1672" stroke="#72bfff" stroke-opacity=".25"/>
+</svg>
