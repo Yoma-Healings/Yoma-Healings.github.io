@@ -31,7 +31,7 @@ async function login(req, res, next) {
 function logout(req, res, next) {
   req.session.destroy((error) => {
     if (error) return next(error);
-    res.clearCookie("connect.sid");
+    res.clearCookie("portfolio.sid", { httpOnly: true, sameSite: "lax", secure: process.env.NODE_ENV === "production" });
     res.redirect("/auth/login");
   });
 }
