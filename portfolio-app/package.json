@@ -1,0 +1,36 @@
+{
+  "name": "harrison-portfolio-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Server-rendered portfolio application built with Express, EJS and PostgreSQL.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:studio": "prisma studio",
+    "admin:create": "node src/scripts/create-admin.js",
+    "check": "node --check src/app.js && node --check src/server.js && node --check src/controllers/authController.js && node --check src/controllers/adminController.js && node --check src/controllers/contactController.js && node --check src/controllers/homeController.js && node --check src/controllers/projectAdminController.js && node --check src/middleware/authMiddleware.js && node --check src/models/userModel.js && node --check src/routes/adminRoutes.js && node --check src/routes/authRoutes.js && node --check src/routes/contactRoutes.js && node --check src/routes/homeRoutes.js && node --check src/scripts/create-admin.js && node --check src/scripts/seed-projects.js",
+    "seed:projects": "node src/scripts/seed-projects.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@prisma/client": "6.19.3",
+    "bcryptjs": "^3.0.2",
+    "connect-pg-simple": "^10.0.0",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.18.1",
+    "helmet": "^8.1.0",
+    "pg": "^8.16.3",
+    "express-rate-limit": "^8.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10",
+    "prisma": "6.19.3"
+  }
+}
