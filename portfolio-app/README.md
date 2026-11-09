@@ -17,7 +17,8 @@ Copy-Item .env.example .env
 ```
 
 Edit `.env` and set:
-- `DATABASE_URL`: PostgreSQL connection string for your database
+- `DATABASE_URL`: Supabase **Session pooler** connection string (for the running Express app and PostgreSQL-backed sessions)
+- `DIRECT_URL`: Supabase direct connection string for Prisma migrations (if your deployment network supports IPv6); otherwise use the Supabase Session pooler connection string for both while running migrations
 - `SESSION_SECRET`: a unique random secret of at least 32 characters
 - `ADMIN_NAME`, `ADMIN_EMAIL`, `ADMIN_PASSWORD`: initial administrator details. Use a strong password of at least 14 characters.
 
