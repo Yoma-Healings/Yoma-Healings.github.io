@@ -33,10 +33,11 @@ node -e "console.log(require('crypto').randomBytes(48).toString('hex'))"
 npm run prisma:generate
 npm run prisma:migrate -- --name init
 npm run admin:create
+npm run seed:projects
 npm run dev
 ```
 
-Open `http://localhost:3000`. The administrator signs in at `/auth/login`.
+Open `http://localhost:3000`. The administrator signs in at `/auth/login`. Six initial project entries are created as unpublished drafts; review them in the admin area and publish only after confirming their descriptions.
 
 The admin bootstrap command hashes the password with bcrypt and upserts the configured administrator. Do not commit `.env` or share the generated credentials.
 
